@@ -1,0 +1,751 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game Events</name>
+    <events>
+        <variable comment="Total jarak lari sejauh ini, dalam piksel." constant="0" name="TotalDistance" sid="9148814939799518" static="0" type="number">0</variable>
+        <variable comment="Hitungan sampai &apos;NextBlock&apos;, pada saat mana sebuah blok baru dibuat." constant="0" name="CurrentDistance" sid="2318692107376127" static="0" type="number">0</variable>
+        <variable constant="0" name="MusuhSpawnTime" sid="4207731233408835" static="0" type="number">2.5</variable>
+        <variable constant="0" name="Score" sid="5921257058893309" static="0" type="number">0</variable>
+        <variable constant="0" name="Health" sid="8777518438024761" static="0" type="number">10</variable>
+        <variable comment="Jaraknya untuk membuat blok berikutnya." constant="0" name="NextBlock" sid="1922879159096023" static="0" type="number">150</variable>
+        <variable constant="0" name="firsttime" sid="5662961016407069" static="0" type="number">1</variable>
+        <variable constant="0" name="Pause" sid="8452412583552043" static="0" type="number">0</variable>
+        <variable constant="0" name="BonusSpawnSpeed" sid="5802680195257644" static="0" type="number">3</variable>
+        <variable constant="0" name="isPlaying" sid="6414481525595469" static="0" type="number">1</variable>
+        <variable constant="0" name="HighScoreKey" sid="6247232072704876" static="0" type="text">RunawayHighScore</variable>
+        <variable constant="0" name="HighScore" sid="2264838158670885" static="0" type="number">0</variable>
+        <variable constant="0" name="NumMusuh" sid="4327560074588106" static="0" type="number">3</variable>
+        <variable constant="0" name="TotalJarak" sid="4053521360104346" static="0" type="number">0</variable>
+        <comment>Pastikan semuanya bergerak tertinggal di layar (karena standar 0 derajat benar)</comment>
+        <event-block sid="9013483298730259">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="870038320399151" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="8950803272881604" type="Background">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="4663427033848603" type="Lintasan">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="3661916766035062" type="DRAGON">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action behavior="Turret" id="1" name="Add object to target" sid="7152312612752473" type="target">
+                    <param id="0" name="Target">Player</param>
+                </action>
+                <action id="0" name="Play" sid="3887969214155728" type="Audio">
+                    <param id="0" name="Audio file">POL-smiley-island-short</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="9334002138712112">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="9942189705787344" type="WebStorage">
+                            <param id="0" name="Key">HighScoreKey</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6933044096024913" type="System">
+                            <param id="0" name="Variable">HighScore</param>
+                            <param id="1" name="Value">WebStorage.LocalValue(HighScoreKey)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4400241576766859" type="HighScore">
+                            <param id="0" name="Text">&quot;High Score: &quot; &amp;HighScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8551927286275757">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="8362552200079728" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4414210200108411" type="System">
+                            <param id="0" name="Variable">HighScore</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="790606791072431" type="HighScore">
+                            <param id="0" name="Text">&quot;High Score: &quot;  &amp;HighScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Saat di lantai, tetap memegang kontrol &quot;run right&quot;, jadi karakter terus berjalan.</comment>
+        <event-block sid="8642245683997975">
+            <conditions>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="8193993937150124" type="Player" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="4699743234944295" type="Player">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Pada input pengguna sama sekali, buat karakternya lompat.</comment>
+        <event-block any="1" sid="7151501954870663">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="120961745698854" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="864244314471945" type="Audio">
+                    <param id="0" name="Audio file">Lompat</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action behavior="Platform" id="7" name="Simulate control" sid="5020293164641778" type="Player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Terus bertambah jarak arus dan jarak total, dan tampilkan jarak total pada objek teks.</comment>
+        <event-block sid="7895386854107215">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="4931110767356158" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="6275404204361796" type="System">
+                    <param id="0" name="Variable">CurrentDistance</param>
+                    <param id="1" name="Value">Lintasan.Bullet.Speed * dt</param>
+                </action>
+                <action id="-10" name="Add to" sid="3558720684768975" type="System">
+                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="1" name="Value">(Lintasan.Bullet.Speed * dt)/100</param>
+                </action>
+                <action disabled="1" id="0" name="Set text" sid="6573327398473559" type="Distancee">
+                    <param id="0" name="Text">round(TotalDistance)</param>
+                </action>
+                <action id="0" name="Set text" sid="8208613532963796" type="ScoreLabel">
+                    <param id="0" name="Text">&quot;Score: &quot; &amp;Score</param>
+                </action>
+                <action id="0" name="Set text" sid="7758649123277526" type="Health">
+                    <param id="0" name="Text">&quot;Health: &quot; &amp;Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3979003566628244">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="982691920659218" type="System">
+                    <param id="0" name="Interval (seconds)">0.6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="4533590064727962" type="System">
+                    <param id="0" name="Variable">TotalJarak</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="2705961916817085" type="Distancee">
+                    <param id="0" name="Text">&quot;Distance: &quot;&amp;round(TotalJarak) &amp;&quot;0&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Setelah CurrentDistance mencapai NextBlock, sekarang saatnya membuat blok baru. Buat dengan lebar dan tinggi acak, lalu posisikan tepat di tepi kanan layar. Buat itu pindah ke kiri lagi, lalu atur NextBlock untuk membuat blok lain jarak acak setelah yang satu ini.</comment>
+        <event-block sid="6480919395314177">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3286655404878485" type="System">
+                    <param id="0" name="Variable">CurrentDistance</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">NextBlock</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="2510027902856305" type="System">
+                    <param id="0" name="Variable">CurrentDistance</param>
+                    <param id="1" name="Value">NextBlock</param>
+                </action>
+                <action id="-3" name="Create object" sid="446943271396502" type="System">
+                    <param id="0" name="Object to create">Lintasan</param>
+                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                    <param id="2" name="X">0</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+                <action disabled="1" id="-7" name="Set size" sid="7924163316981811" type="Lintasan">
+                    <param id="0" name="Width">100 + random(400)</param>
+                    <param id="1" name="Height">60 + random(150)</param>
+                </action>
+                <action id="-7" name="Set size" sid="2976048799637957" type="Lintasan">
+                    <param id="0" name="Width">150 * int(random(1,4))</param>
+                    <param id="1" name="Height">80 + random(150)</param>
+                </action>
+                <action id="-3" name="Set position" sid="6636034329309972" type="Lintasan">
+                    <param id="0" name="X">LayoutWidth</param>
+                    <param id="1" name="Y">LayoutHeight - Self.Height</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="3616993669783336" type="Lintasan">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action id="-9" name="Set value" sid="465613378637273" type="System">
+                    <param id="0" name="Variable">NextBlock</param>
+                    <param id="1" name="Value">Lintasan.Width + 50 + random(50)</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Hancurkan blok yang keluar dari kiri layar sehingga mereka tidak terus mengambil memori atau CPU.</comment>
+        <event-block sid="1904299519996105">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="2821239613231149" type="Lintasan">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-Self.Width</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="750338617932939" type="Lintasan" />
+            </actions>
+        </event-block>
+        <event-block any="1" sid="8037497069477002">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="2510732025147648" type="Musuh">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-Self.Width</param>
+                </condition>
+                <condition id="-2" name="Compare Y" sid="9033588994902546" type="Musuh">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight+Self.Height+50 </param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2769155680444287" type="Musuh" />
+            </actions>
+        </event-block>
+        <event-block any="1" sid="5873034199590323">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="2429365620413531" type="DRAGON">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-Self.Width</param>
+                </condition>
+                <condition id="-2" name="Compare Y" sid="4046354989023952" type="DRAGON">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight+Self.Height+50 </param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="5899769053650158" type="DRAGON" />
+            </actions>
+        </event-block>
+        <comment>Jika pemain jatuh dari bagian bawah layar, restart permainan.</comment>
+        <event-block sid="7494835972729808">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="242095186040141" type="Player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="-21" name="Reset global variables" sid="1879323621827221" type="System" />
+                <action id="-11" name="Subtract from" sid="2288001935616281" type="System">
+                    <param id="0" name="Variable">Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="1776800708311911" type="System">
+                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="224109707128093" type="System">
+                    <param id="0" name="Variable">TotalJarak</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8965627157127662" type="System">
+                    <param id="0" name="Variable">NextBlock</param>
+                    <param id="1" name="Value">150</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="2076369593065758" type="System" />
+            </actions>
+        </event-block>
+        <event-block any="1" disabled="1" sid="8062156569470353">
+            <conditions>
+                <condition id="-3" inverted="1" name="Is on-screen" sid="7112414577701542" type="Player" />
+                <condition id="1" name="Is overlapping another object" sid="1724369058175575" type="Player">
+                    <param id="0" name="Object">Musuh</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="-11" name="Subtract from" sid="6859927706850415" type="System">
+                    <param id="0" name="Variable">Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action disabled="1" id="-26" name="Restart layout" sid="9012346917877444" type="System" />
+                <action id="-2" name="Go to layout" sid="9999421854691427" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="6442469142347236">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="6182969733866847" type="Player">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-Self.Width-60</param>
+                </condition>
+                <condition id="-1" name="Compare X" sid="2596126692121365" type="Player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="X co-ordinate">LayoutWidth+Self.Width</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="9712508483950672" type="System">
+                    <param id="0" name="Variable">Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="4396636795231431" type="System">
+                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="2760961275983642" type="System">
+                    <param id="0" name="Variable">TotalJarak</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="2318574254943764" type="System">
+                    <param id="0" name="Variable">NextBlock</param>
+                    <param id="1" name="Value">150</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="8363741498461214" type="System" />
+            </actions>
+        </event-block>
+        <comment>Karena percepatan gerakan platform, kita perlu melakukan beberapa tweak untuk memastikan pemain tidak secara bertahap terdorong ke kiri layar dari waktu ke waktu.</comment>
+        <event-block sid="991568104294664">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="3317769226333485" type="Player">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">105</param>
+                </condition>
+                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="7093830476305" type="Player" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="7508996305341156" type="Player">
+                    <param id="0" name="X">Self.X + 5 * dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2699064455989989">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="9527751240188073" type="Player" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="157509707237846" type="Player">
+                    <param id="0" name="X">Self.X + 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="194495727709253">
+            <conditions>
+                <condition behavior="Platform" disabled="1" id="4" inverted="1" name="Is falling" sid="1052173476429398" type="Musuh" />
+                <condition behavior="Platform" id="2" name="Is on floor" sid="3107617514701212" type="Musuh" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="8258235404563334" type="Musuh">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8409606526392092">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="7673132400383388" type="System">
+                    <param id="0" name="Interval (seconds)">MusuhSpawnTime</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="6366953481826017" type="System">
+                    <param id="0" name="Object to create">Musuh</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">random(600,900)</param>
+                    <param id="3" name="Y">-50</param>
+                </action>
+                <action id="4" name="Set animation" sid="1253685690437236" type="Musuh">
+                    <param id="0" name="Animation">&quot;Musuh&quot; &amp; int(random(1,NumMusuh))</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3379342535969164">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="4576247313844179" type="Player">
+                    <param id="0" name="Object">Musuh</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7416773938954952">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="4158872332019998" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="2647396530738485" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="6065111778424482" type="Player">
+                            <param id="0" name="Vector Y">-600</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="1832551064660609" type="Musuh">
+                            <param id="0" name="Object">BonusMusuh</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="9018905756038143" type="BonusMusuh">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="6683779651828922" type="Musuh">
+                            <param id="0" name="Object">darah</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="8487922973495901" type="Audio">
+                            <param id="0" name="Audio file">Nginjak</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9092823018587133" type="Musuh" />
+                    </actions>
+                </event-block>
+                <event-block sid="7095970917323811">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="4101725684607325" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="1975045973165275" type="Musuh">
+                            <param id="0" name="Object">ledakan</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="5676451150657889" type="Audio">
+                            <param id="0" name="Audio file">menabrak</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="2712701462876499" type="Musuh" />
+                        <action id="-11" name="Subtract from" sid="6336005063436278" type="System">
+                            <param id="0" name="Variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5985033830345494">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="267165526793518" type="Player">
+                    <param id="0" name="Object">DRAGON</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="9777380551755971">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="7101420317819728" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="385522618887936" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="4882749763040306" type="Player">
+                            <param id="0" name="Vector Y">-600</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="5755388081392117" type="DRAGON">
+                            <param id="0" name="Object">BonusMusuh</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="589448920430635" type="BonusMusuh">
+                            <param id="0" name="Angle">-90</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="5544440576838475" type="DRAGON">
+                            <param id="0" name="Object">DRAGON3</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="5907687927641909" type="Audio">
+                            <param id="0" name="Audio file">Nginjak</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="6850964808782651" type="DRAGON" />
+                    </actions>
+                </event-block>
+                <event-block sid="9755237778865279">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="5421852883922562" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="3033745867762002" type="DRAGON">
+                            <param id="0" name="Object">ledakan</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="6950331721522348" type="Audio">
+                            <param id="0" name="Audio file">menabrak</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="7540417391211142" type="DRAGON" />
+                        <action id="-11" name="Subtract from" sid="3072198432170788" type="System">
+                            <param id="0" name="Variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="6089734663558167">
+            <conditions>
+                <condition behavior="Platform" id="3" name="Is jumping" sid="8026562935811417" type="Player" />
+                <condition behavior="Platform" disabled="1" id="4" name="Is falling" sid="936644169233067" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="2825419868011839" type="Player">
+                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5222282523891249">
+            <conditions>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="9773962946722107" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="7422311737793433" type="Player">
+                    <param id="0" name="Animation">&quot;Run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3042264380405427">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="4312120497485669" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="1383644185507567" type="System">
+                    <param id="0" name="Object to create">KOIN</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">Player.Y+LayoutWidth</param>
+                    <param id="3" name="Y">random(400,650)</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="325872972901643" type="KOIN">
+                    <param id="0" name="Angle">180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="967341255356185">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3317933161921456" type="Player">
+                    <param id="0" name="Object">KOIN</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="3048574972892016" type="Audio">
+                    <param id="0" name="Audio file">Koin</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="7676212490725184" type="KOIN">
+                    <param id="0" name="Object">Gotcha</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="239983845510352" type="KOIN" />
+                <action id="-10" name="Add to" sid="4935282041954013" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7578964675762908">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7052465807742211" type="System">
+                    <param id="0" name="Variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="1509701010752342" type="System">
+                    <param id="0" name="Layout">Restart</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5253583011441864">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4053135823253318" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">HighScore</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5229761580249459" type="System">
+                            <param id="0" name="Variable">HighScore</param>
+                            <param id="1" name="Value">Score</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="9614154386797133" type="WebStorage">
+                            <param id="0" name="Key">HighScoreKey</param>
+                            <param id="1" name="Value">HighScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6218401768011105">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="2125589754727767" type="System">
+                    <param id="0" name="Interval (seconds)">2.5</param>
+                </condition>
+                <condition id="-16" name="Pick random instance" sid="9451669467272621" type="System">
+                    <param id="0" name="Object">Spawn</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="6023390556848443" type="Spawn">
+                    <param id="0" name="Object">DRAGON</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="5346065700583187" type="DRAGON">
+                    <param id="0" name="Angle">angle(Player.X,Player.Y,DRAGON.X,DRAGON.Y)</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="9936409521530015" type="DRAGON">
+                    <param id="0" name="Angle">angle(DRAGON.X,DRAGON.Y,Player.X+random(0,100),Player.Y)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="291245343036887">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="1064569356195149" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="7804547440200633" type="target">
+                    <param id="0" name="X">DRAGON.X</param>
+                    <param id="1" name="Y">DRAGON.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4609529680540395">
+            <conditions>
+                <condition behavior="Turret" id="1" name="On shoot" sid="3283299966638862" type="target" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="2572451476348399" type="target">
+                    <param id="0" name="Object">api</param>
+                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="640631946914307">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="9148179064329131" type="api">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="1344027599142725" type="Audio">
+                    <param id="0" name="Audio file">menabrak</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" sid="8509099096228226" type="api" />
+                <action id="-11" name="Subtract from" sid="8195062469594397" type="System">
+                    <param id="0" name="Variable">Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Pauses the Game</comment>
+        <event-block sid="676371689008568">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8597808253863336" type="Touch">
+                    <param id="0" name="Object">Pause</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="8908565255849832" type="System">
+                    <param id="0" name="Variable">Pause</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3553959878914331">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="3524672362794479" type="Keyboard">
+                    <param id="0" name="Key">80 (P)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="6798213054885796" type="System">
+                    <param id="0" name="Variable">Pause</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8345571540697611">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3753949848359562" type="System">
+                    <param id="0" name="Variable">Pause</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1179622903478976" type="System">
+                    <param id="0" name="Variable">Pause</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8037776643847113">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8851357149916738" type="System">
+                    <param id="0" name="Variable">Pause</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="1241112520337096" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+                <action id="-27" name="Snapshot canvas" sid="4740501045108946" type="System">
+                    <param id="0" name="Format">0</param>
+                    <param id="1" name="JPEG quality">75</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="1356499135014871" type="LayarPause">
+                    <param id="0" name="Opacity">20</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6258784781317918" type="LayarPause">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1258074504873824">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8360621537355653" type="System">
+                    <param id="0" name="Variable">Pause</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="9819431168552788" type="System">
+                    <param id="0" name="Time scale">1.0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="7340598503510404" type="LayarPause">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8697138693631792" type="LayarPause">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

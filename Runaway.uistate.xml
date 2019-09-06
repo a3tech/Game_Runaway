@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">Game</layout>
+        <layout order="4">Menu</layout>
+        <layout order="5">Restart</layout>
+        <event-sheet active="1" order="1">Game Events</event-sheet>
+        <event-sheet order="2">Menu Events</event-sheet>
+        <event-sheet order="3">Restart Events</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/Spawn/" />
+        <folder expanded="1" path="animation-folder/LayarPause/" />
+        <folder expanded="1" path="animation-folder/Lintasan/" />
+        <folder expanded="1" path="animation-folder/Menu/" />
+        <folder expanded="1" path="animation-folder/Background/" />
+        <folder expanded="1" path="animation-folder/TombolMulai/" />
+        <folder expanded="1" path="animation-folder/TombolKeluar/" />
+        <folder expanded="1" path="animation-folder/Judul/" />
+        <folder expanded="1" path="animation-folder/Judul2/" />
+        <folder expanded="1" path="animation-folder/Player/" />
+        <folder expanded="1" path="animation-folder/DRAGON/" />
+        <folder expanded="1" path="animation-folder/KOIN/" />
+        <folder expanded="1" path="animation-folder/Sprite3/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
+        <folder expanded="1" path="animation-folder/DRAGON2/" />
+        <folder expanded="1" path="animation-folder/Musuh/" />
+        <folder expanded="1" path="animation-folder/DRAGON3/" />
+        <folder expanded="1" path="animation-folder/Restart2/" />
+        <folder expanded="1" path="animation-folder/restartt/" />
+        <folder expanded="1" path="animation-folder/Kembali/" />
+        <folder expanded="1" path="animation-folder/darah/" />
+        <folder expanded="1" path="animation-folder/ledakan/" />
+        <folder expanded="1" path="animation-folder/target/" />
+        <folder expanded="1" path="animation-folder/Monsterr/" />
+        <folder expanded="1" path="animation-folder/Monster/" />
+        <folder expanded="1" path="animation-folder/naga/" />
+        <folder expanded="1" path="animation-folder/naga2/" />
+        <folder expanded="1" path="animation-folder/Pause/" />
+        <folder expanded="1" path="animation-folder/api/" />
+    </folders-expanded>
+</c2uistate>

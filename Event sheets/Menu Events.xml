@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menu Events</name>
+    <events>
+        <event-block any="1" sid="8193265259294109">
+            <conditions>
+                <condition id="3" name="On touched object" sid="6363760076208349" type="Touch">
+                    <param id="0" name="Object">TombolMulai</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="5823012909558211" type="System" />
+                <action id="-9" name="Set value" sid="3283710478596924" type="System">
+                    <param id="0" name="Variable">firsttime</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="2043271271420512" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+                <action id="6" name="Stop" sid="7309908273614528" type="Audio">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="1803009377510475" type="Audio">
+                    <param id="0" name="Audio file">Pencet</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8939932601546442">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="7232873886156001" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="2025283792624" type="System">
+                    <param id="0" name="Variable">firsttime</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2865229420616422" type="Sprite3">
+                    <param id="0" name="Angle">360</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="9402053541316137" type="Sprite4">
+                    <param id="0" name="Angle">360</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="754738250687164" type="DRAGON2">
+                    <param id="0" name="Angle">360</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="6445721255515692" type="Monsterr">
+                    <param id="0" name="Angle">360</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="4124036408320126" type="Monster">
+                    <param id="0" name="Angle">360</param>
+                </action>
+                <action id="0" name="Play" sid="2131957482674857" type="Audio">
+                    <param id="0" name="Audio file">POL-doggo-brothers-short</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5472073688773519">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9268651472019351" type="Touch">
+                    <param id="0" name="Object">TombolKeluar</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Close" sid="5999291955641976" type="Browser" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

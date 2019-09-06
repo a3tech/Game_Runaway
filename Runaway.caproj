@@ -1,0 +1,1115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Runaway</name>
+    <description>Catch Me If You Can !</description>
+    <version>1.1</version>
+    <author>a3isagod</author>
+    <author-email>annasinside@gmail.com</author-email>
+    <author-website>http://www.a3official.ga/</author-website>
+    <app-id>a3isagod</app-id>
+    <unique-id>mq4njje893h0</unique-id>
+    <saved-with-version>22700</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1000</width>
+        <height>720</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Menu</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use iOS retina display">iPhone only</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Touch" sid="9124476300265871">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Keyboard" sid="4517317137793493">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Distancee" sid="148200870191917">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="WebStorage" sid="6448288583052532">
+            <plugin id="WebStorage" />
+        </object-type>
+        <object-type name="HighScore" sid="249397322933472">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ScoreLabel" sid="1051753185747345">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Health" sid="6456109575346339">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Gotcha" sid="9765905696723659">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="8691666538237296">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="9122564562139611">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Restart" sid="9933732709499922">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Spawn" sid="1013906920862575">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8030638933637446" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BonusMusuh" sid="339994471548186">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="8976515226303763">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="1315112908173414">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="LayarPause" sid="695423721641454">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1503464088642657" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Browser" sid="672397150853431">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="Lintasan" sid="8247872248241709">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="1278410166251756">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="8199283698425368">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8075293529092579" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Background\BG 1\Lintasan1.png">
+                        <collision-poly>
+                            <point x="0.0362927" y="0.129274" />
+                            <point x="0.5" y="0.147436" />
+                            <point x="0.965207" y="0.123932" />
+                            <point x="1" y="0.5" />
+                            <point x="0.9997" y="0.998932" />
+                            <point x="0.00029994" y="0.998932" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Menu" sid="8928835938421605">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="8493992287178415">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9599851328171764" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Background\BG 1\Menu.png">
+                        <collision-poly>
+                            <point x="0.00029994" y="0.00029994" />
+                            <point x="0.9997" y="0.00029994" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Background" sid="6464312566350131">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="3885750382966993">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8082010062389064" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Background\BG 1\Background.png">
+                        <collision-poly>
+                            <point x="0.00029994" y="0.00029994" />
+                            <point x="0.9997" y="0.00029994" />
+                            <point x="0.9997" y="0.9997" />
+                            <point x="0.00029994" y="0.9997" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TombolMulai" sid="724069765765995">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6236754137212755" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Tombol Menu Awal\Tombol Mulai.png">
+                        <collision-poly>
+                            <point x="0.00213675" y="0.00819672" />
+                            <point x="0.997863" y="0.00819672" />
+                            <point x="0.997863" y="0.991803" />
+                            <point x="0.00213675" y="0.991803" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TombolKeluar" sid="7911137073347972">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4668584316461294" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Tombol Menu Awal\Tombol Keluar.png">
+                        <collision-poly>
+                            <point x="0.00213675" y="0.00819672" />
+                            <point x="0.997863" y="0.00819672" />
+                            <point x="0.997863" y="0.991803" />
+                            <point x="0.00213675" y="0.991803" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Judul" sid="7606545752365589">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4223262464424385" speed="5">
+                    <frame duration="1" hotspotX="0.500238" hotspotY="0.500829" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Background\BG 1\Judul.png">
+                        <collision-poly>
+                            <point x="0.0209424" y="0.0729685" />
+                            <point x="0.979058" y="0.0729685" />
+                            <point x="0.953356" y="0.837479" />
+                            <point x="0.0466445" y="0.837479" />
+                            <point x="0.000475964" y="0.499171" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Judul2" sid="6215301957147726">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2457460794473788" speed="5">
+                    <frame duration="1" hotspotX="0.500238" hotspotY="0.500829" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Background\BG 1\Judul.png">
+                        <collision-poly>
+                            <point x="0.0209424" y="0.0729685" />
+                            <point x="0.979058" y="0.0729685" />
+                            <point x="0.953356" y="0.837479" />
+                            <point x="0.0466445" y="0.837479" />
+                            <point x="0.000475964" y="0.499171" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Player" sid="9162304448919472">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="9933714903381514">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8946451035263593" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Player.png">
+                        <collision-poly>
+                            <point x="0.298969" y="0.230159" />
+                            <point x="0.5" y="0.559524" />
+                            <point x="0.407216" y="0.456349" />
+                            <point x="0.43299" y="0.5" />
+                            <point x="0.546392" y="0.650794" />
+                            <point x="0.5" y="0.996032" />
+                            <point x="0.201031" y="0.845238" />
+                            <point x="0.0773196" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="8" loop="1" name="Run" pingpong="0" repeatcount="1" repeatto="0" sid="4164725568586753" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Lari\1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\4.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\5.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\6.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\7.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\8.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="Jump" pingpong="0" repeatcount="1" repeatto="0" sid="6086005655618357" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Lompat.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="DRAGON" sid="4055767268377484">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="2846035325976563">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="2797660128677662">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="12" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9408982174193723" speed="11">
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\DRAGON-1.png">
+                        <collision-poly>
+                            <point x="0.252964" y="0.292237" />
+                            <point x="0.498024" y="0.415525" />
+                            <point x="0.671937" y="0.378995" />
+                            <point x="0.600791" y="0.497717" />
+                            <point x="0.58498" y="0.520548" />
+                            <point x="0.498024" y="0.799087" />
+                            <point x="0.0948617" y="0.890411" />
+                            <point x="0.264822" y="0.497717" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\2.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\3.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\4.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\5.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\6.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\7.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\8.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\9.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\10.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\11.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\12.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="KOIN" sid="5755189801970844">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="5645961755396711">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8668986421847705" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KOIN\KOIN.png">
+                        <collision-poly>
+                            <point x="0.147239" y="0.146341" />
+                            <point x="0.5" y="0" />
+                            <point x="0.852761" y="0.146341" />
+                            <point x="0.998466" y="0.5" />
+                            <point x="0.852761" y="0.853659" />
+                            <point x="0.5" y="1" />
+                            <point x="0.147239" y="0.853659" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="8942164082168341">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Wrap" sid="1379651103869605">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="469583308061985">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="8" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="998012128956664" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Lari\1.png">
+                        <collision-poly>
+                            <point x="0.170103" y="0.130952" />
+                            <point x="0.5" y="0.416667" />
+                            <point x="0.463918" y="0.412698" />
+                            <point x="0.881443" y="0.5" />
+                            <point x="0.840206" y="0.876984" />
+                            <point x="0.5" y="0.837302" />
+                            <point x="0.0979381" y="0.924603" />
+                            <point x="0.257732" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\4.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\5.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\6.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\7.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\KURCACI\Karakter\8.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite4" sid="743133899397608">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Wrap" sid="6843693380519695">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="7682685423294028">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="833689416920386" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTER\1.png">
+                        <collision-poly>
+                            <point x="0.685" y="0.622" />
+                            <point x="0.5" y="0.88" />
+                            <point x="0.265" y="0.682" />
+                            <point x="0.276667" y="0.5" />
+                            <point x="0.318333" y="0.382" />
+                            <point x="0.5" y="0.124" />
+                            <point x="0.801667" y="0.238" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTER\2.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTER\3.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="DRAGON2" sid="2534561556607693">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Wrap" sid="9041606020726333">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="620520965537464">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="12" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9642382335171313" speed="11">
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\DRAGON-1.png">
+                        <collision-poly>
+                            <point x="0.735178" y="0.497717" />
+                            <point x="0.905138" y="0.890411" />
+                            <point x="0.501976" y="0.799087" />
+                            <point x="0.41502" y="0.520548" />
+                            <point x="0.399209" y="0.497717" />
+                            <point x="0.328063" y="0.378995" />
+                            <point x="0.501976" y="0.415525" />
+                            <point x="0.747036" y="0.292237" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\2.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\3.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\4.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\5.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\6.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\7.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\8.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\9.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\10.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\11.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\12.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Musuh" sid="5456517322901416">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="8807094889378357">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Musuh" pingpong="0" repeatcount="1" repeatto="0" sid="3906140220083878" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MNSTR\Musuh1.png">
+                        <collision-poly>
+                            <point x="0.358333" y="0.43" />
+                            <point x="0.5" y="0.232" />
+                            <point x="0.635" y="0.438" />
+                            <point x="0.69" y="0.5" />
+                            <point x="0.731667" y="0.678" />
+                            <point x="0.5" y="0.988" />
+                            <point x="0.22" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MNSTR\Musuh2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MNSTR\Musuh3.png" />
+                </animation>
+                <animation framecount="4" loop="1" name="Musuh1" pingpong="0" repeatcount="1" repeatto="0" sid="3898128699089923" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONS 1\1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONS 1\2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONS 1\3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONS 1\4.png" />
+                </animation>
+                <animation framecount="6" loop="1" name="Musuh2" pingpong="0" repeatcount="1" repeatto="0" sid="9906906128256245" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTERS FIX\1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTERS FIX\2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTERS FIX\3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTERS FIX\4.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTERS FIX\5.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTERS FIX\6.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="DRAGON3" sid="6594665237099553">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="9616429961496206">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="7381601563413547">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="267857880969094" speed="5">
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.497717" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\DRAGON-3.png">
+                        <collision-poly>
+                            <point x="0.189723" y="0.502283" />
+                            <point x="0.296443" y="0.342466" />
+                            <point x="0.498024" y="0.246575" />
+                            <point x="0.833992" y="0.191781" />
+                            <point x="0.620553" y="0.502283" />
+                            <point x="0.561265" y="0.493151" />
+                            <point x="0.498024" y="0.488584" />
+                            <point x="0.29249" y="0.6621" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Restart2" sid="4181191884109063">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2713157023446416" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Background\BG 1\Restart.png">
+                        <collision-poly>
+                            <point x="0.00029994" y="0.00029994" />
+                            <point x="0.9997" y="0.00029994" />
+                            <point x="0.9997" y="0.9997" />
+                            <point x="0.00029994" y="0.9997" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="restartt" sid="7828383909246312">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5531904557581874" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Background\BG 1\restartt.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.999222" y="0.00306748" />
+                            <point x="0.999222" y="0.996933" />
+                            <point x="0.000777605" y="0.996933" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Kembali" sid="5072603389184322">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="138469375569913" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Background\BG 1\Kembali.png">
+                        <collision-poly>
+                            <point x="0.00213675" y="0.00819672" />
+                            <point x="0.997863" y="0.00819672" />
+                            <point x="0.997863" y="0.991803" />
+                            <point x="0.00213675" y="0.991803" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="darah" sid="2800438966121314">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="6323770380871766">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="3997633584402135">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="5" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8741949469757154" speed="15">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501341" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DARAH\darah.png">
+                        <collision-poly>
+                            <point x="0.402" y="0.538874" />
+                            <point x="0.5" y="0.391421" />
+                            <point x="0.62" y="0.509383" />
+                            <point x="0.612" y="0.49866" />
+                            <point x="0.668" y="0.55496" />
+                            <point x="0.5" y="0.66756" />
+                            <point x="0.376" y="0.495979" />
+                            <point x="0.34" y="0.49866" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501341" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DARAH\2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501341" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DARAH\3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501341" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DARAH\4.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501341" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DARAH\5.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ledakan" sid="2183042942453456">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="1302051309207958">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="7218743872363528">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2139834699904956" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\Njebluk\ledakan.png">
+                        <collision-poly>
+                            <point x="0.338281" y="0.370085" />
+                            <point x="0.5" y="0.310256" />
+                            <point x="0.63125" y="0.403419" />
+                            <point x="0.713281" y="0.5" />
+                            <point x="0.646875" y="0.613675" />
+                            <point x="0.5" y="0.742735" />
+                            <point x="0.3375" y="0.630769" />
+                            <point x="0.324219" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\Njebluk\ledakan2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\Njebluk\ledakan3.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="2020058923005391">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="target" sid="3156719995442152">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Turret" sid="5532224087572432">
+                    <behavior id="Turret" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7734394379087533" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500521" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\Target\target.png">
+                        <collision-poly>
+                            <point x="0.149891" y="0.142857" />
+                            <point x="0.5" y="0" />
+                            <point x="0.850109" y="0.142857" />
+                            <point x="0.998906" y="0.499479" />
+                            <point x="0.849015" y="0.8561" />
+                            <point x="0.5" y="1" />
+                            <point x="0.150985" y="0.8561" />
+                            <point x="0.00109409" y="0.499479" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Monsterr" sid="2603150397164219">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="2321444579725066">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Wrap" sid="41568240926123">
+                    <behavior id="wrap" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="98595682274747" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTERS FIX\Monsterr.png">
+                        <collision-poly>
+                            <point x="0.651639" y="0.5" />
+                            <point x="0.872951" y="0.878906" />
+                            <point x="0.5" y="0.890625" />
+                            <point x="0.295082" y="0.71875" />
+                            <point x="0.204918" y="0.5" />
+                            <point x="0.463115" y="0.441406" />
+                            <point x="0.5" y="0.394531" />
+                            <point x="0.618852" y="0.363281" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTERS FIX\2.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTERS FIX\3.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTERS FIX\4.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTERS FIX\5.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONSTERS FIX\6.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Monster" sid="3711004256099163">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Wrap" sid="6058974582352374">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="755609529563947">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5718569033493516" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONS 1\Monster2.png">
+                        <collision-poly>
+                            <point x="0.763158" y="0.5" />
+                            <point x="0.594737" y="0.486667" />
+                            <point x="0.5" y="0.953333" />
+                            <point x="0.426316" y="0.46" />
+                            <point x="0.421053" y="0.5" />
+                            <point x="0.231579" y="0.293333" />
+                            <point x="0.5" y="0.326667" />
+                            <point x="0.768421" y="0.293333" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONS 1\2.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONS 1\3.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\MONS 1\4.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="naga" sid="2356420364987583">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Wrap" sid="4832320817751984">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="5296042325772768">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="12" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1818385727885166" speed="11">
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\naga1.png">
+                        <collision-poly>
+                            <point x="0.252964" y="0.292237" />
+                            <point x="0.498024" y="0.415525" />
+                            <point x="0.671937" y="0.378995" />
+                            <point x="0.600791" y="0.497717" />
+                            <point x="0.58498" y="0.520548" />
+                            <point x="0.498024" y="0.799087" />
+                            <point x="0.0948617" y="0.890411" />
+                            <point x="0.264822" y="0.497717" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\2.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\3.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\4.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\5.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\6.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\7.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\8.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\9.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\10.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\11.png" />
+                    <frame duration="1" hotspotX="0.501976" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\12.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="naga2" sid="3323466068602402">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Wrap" sid="8796142786536103">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="7333884266190643">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="12" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4993658275887834" speed="11">
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\naga2.png">
+                        <collision-poly>
+                            <point x="0.735178" y="0.497717" />
+                            <point x="0.905138" y="0.890411" />
+                            <point x="0.501976" y="0.799087" />
+                            <point x="0.41502" y="0.520548" />
+                            <point x="0.399209" y="0.497717" />
+                            <point x="0.328063" y="0.378995" />
+                            <point x="0.501976" y="0.415525" />
+                            <point x="0.747036" y="0.292237" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\2.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\3.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\4.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\5.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\6.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\7.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\8.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\9.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\10.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\11.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498024" hotspotY="0.502283" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\DRAGON\Naga\NOGO\12.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Pause" sid="9254031627726084">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9816063231630005" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Background\BG 1\Pause.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.999222" y="0.00306748" />
+                            <point x="0.999222" y="0.996933" />
+                            <point x="0.000777605" y="0.996933" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="api" sid="9818265958379393">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="5629845229919636">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="9953505367324068">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3338733567248727" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501176" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\API\api.png">
+                        <collision-poly>
+                            <point x="0.229687" y="0.345882" />
+                            <point x="0.5" y="0.228235" />
+                            <point x="0.690625" y="0.465882" />
+                            <point x="0.779688" y="0.498824" />
+                            <point x="0.742188" y="0.611765" />
+                            <point x="0.5" y="0.741176" />
+                            <point x="0.248437" y="0.625882" />
+                            <point x="0.226563" y="0.498824" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501176" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\API\2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501176" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\API\3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501176" original-source="G:\Materi Kuliah\Semester 3\Teknologi &amp; Prototipe Game\Final Project\FP\Karakter\API\4.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Game.xml</layout>
+        <layout>Menu.xml</layout>
+        <layout>Restart.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Game Events.xml</event-sheet>
+        <event-sheet>Menu Events.xml</event-sheet>
+        <event-sheet>Restart Events.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="4">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="5" />
+        <global-instance type="WebStorage" uid="9" />
+        <global-instance type="Browser" uid="37" />
+        <global-instance type="Audio" uid="47">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder />
+    <music-folder>
+        <file name="POL-doggo-brothers-short.m4a" />
+        <file name="POL-doggo-brothers-short.ogg" />
+        <file name="POL-smiley-island-short.m4a" />
+        <file name="POL-smiley-island-short.ogg" />
+        <file name="Koin.m4a" />
+        <file name="Koin.ogg" />
+        <file name="Lompat.m4a" />
+        <file name="Lompat.ogg" />
+        <file name="Nginjak.m4a" />
+        <file name="Nginjak.ogg" />
+        <file name="Pencet.m4a" />
+        <file name="Pencet.ogg" />
+        <file name="menabrak.m4a" />
+        <file name="menabrak.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
